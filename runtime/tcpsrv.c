@@ -156,7 +156,7 @@ addNewLstnPort(tcpsrv_t *const pThis, const uchar *const pszPort,
 	CHKiRet(prop.ConstructFinalize(pEntry->pInputName));
 
 	/* support statistics gathering */
-	CHKiRet(ratelimitNew(&pEntry->ratelimiter, "tcperver", NULL));
+	CHKiRet(ratelimitNew(&pEntry->ratelimiter, "tcpserver", NULL));
 	ratelimitSetLinuxLike(pEntry->ratelimiter, pThis->ratelimitInterval, pThis->ratelimitBurst);
 	ratelimitSetThreadSafe(pEntry->ratelimiter);
 
